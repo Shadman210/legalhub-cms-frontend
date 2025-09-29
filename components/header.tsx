@@ -18,10 +18,10 @@ export function Header() {
 
         <nav className="hidden md:flex items-center space-x-8">
           <Link
-            href="/find-lawyers"
+            href="/"
             className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
           >
-            Find Lawyers
+            Home
           </Link>
           <Link
             href="/about"
@@ -35,12 +35,12 @@ export function Header() {
           >
             For Professionals
           </Link>
-          <Link
+          {/* <Link
             href="#"
             className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
           >
             Blog
-          </Link>
+          </Link> */}
           <Link
             href="/pricing"
             className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"

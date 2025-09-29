@@ -1,11 +1,11 @@
-import type React from "react";
-import type { Metadata } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+import { BackgroundAnimations } from "@/components/animations/background-animations";
 import { Analytics } from "@vercel/analytics/next";
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
+import type { Metadata } from "next";
+import type React from "react";
 import { Suspense } from "react";
 import "./globals.css";
-import { BackgroundAnimations } from "@/components/animations/background-animations";
 
 export const metadata: Metadata = {
   title: "LegalHub - Connect with Trusted Legal Experts",
@@ -21,8 +21,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <BackgroundAnimations />
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
-        <BackgroundAnimations />
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>
