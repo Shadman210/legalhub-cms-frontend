@@ -35,17 +35,24 @@ export function Header() {
           >
             For Professionals
           </Link>
-          {/* <Link
-            href="#"
+          <Link
+            href="/join-citizen"
             className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
           >
-            Blog
-          </Link> */}
+            For Citizens
+          </Link>
+
           <Link
             href="/pricing"
             className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
           >
             Pricing
+          </Link>
+          <Link
+            href="/blog"
+            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+          >
+            Blog
           </Link>
           <Link
             href="/contact"
@@ -56,9 +63,9 @@ export function Header() {
         </nav>
 
         <div className="flex items-center space-x-4">
-          <Button className="bg-secondary hover:bg-secondary/90" asChild>
+          {/* <Button className="bg-secondary hover:bg-secondary/90" asChild>
             <Link href="/find-lawyers">Get Started</Link>
-          </Button>
+          </Button> */}
           <Button variant="ghost" size="icon" className="md:hidden">
             <Menu className="h-5 w-5" />
           </Button>
