@@ -5,6 +5,7 @@ import {
   Briefcase,
   ChevronDown,
   Globe,
+  Handshake,
   Home,
   Info,
   Menu,
@@ -122,7 +123,7 @@ export function Header() {
     {
       href: "/partners",
       label: "Partners",
-      icon: <ShieldCheck className="h-5 w-5" />,
+      icon: <Handshake className="h-5 w-5" />,
     },
     { href: "/contact", label: "Contact", icon: <Phone className="h-5 w-5" /> },
   ];
