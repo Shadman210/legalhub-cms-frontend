@@ -2,17 +2,22 @@
 
 import { Button } from "@/components/ui/button";
 import {
-  Briefcase,
-  ChevronDown,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useAuth } from "@/lib/auth"; // Assuming an auth hook exists
+import {
   Globe,
-  Handshake,
-  Home,
-  Info,
+  HelpCircle,
+  LayoutDashboard,
+  LogOut,
   Menu,
   Phone,
   Scale,
-  ShieldCheck,
-  Users,
+  User,
   X,
 } from "lucide-react";
 import Link from "next/link";
@@ -69,8 +74,18 @@ const FlagMorocco = () => (
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLangOpen, setIsLangOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
   const langDropdownRef = useRef<HTMLDivElement>(null);
+
+  // This is a placeholder. Replace with your actual authentication context.
+  const { isAuthenticated, user, logout } = useAuth() || {
+    isAuthenticated: false,
+    user: null,
+    logout: () => console.log("logout"),
+  };
+
+  const isAuthPage = pathname.startsWith("/auth");
 
   const languages = [
     { name: "English", flag: <FlagUSA /> },
@@ -80,6 +95,11 @@ export function Header() {
 
   const [selectedLanguage, setSelectedLanguage] = useState(languages[0]);
 
+  // Prevent hydration errors
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   // Close menus on navigation
   useEffect(() => {
     if (isMenuOpen) setIsMenuOpen(false);
@@ -88,10 +108,10 @@ export function Header() {
 
   // Close language dropdown on outside click
   useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
+    function handleClickOutside(event: any) {
       if (
         langDropdownRef.current &&
-        !langDropdownRef.current.contains(event.target as Node)
+        !langDropdownRef.current.contains(event.target)
       ) {
         setIsLangOpen(false);
       }
@@ -102,34 +122,37 @@ export function Header() {
     };
   }, [langDropdownRef]);
 
-  const navLinks = [
-    { href: "/", label: "Home", icon: <Home className="h-5 w-5" /> },
-    { href: "/about", label: "About", icon: <Info className="h-5 w-5" /> },
+  const handleLogout = () => {
+    logout();
+    // Optional: redirect user after logout
+    // router.push('/');
+  };
+
+  // Define menu items for logged-in users
+  const getUserMenuItems = () => {
+    // This can be dynamic based on user role
+    return [
+      {
+        href: "/dashboard",
+        label: "Dashboard",
+        icon: LayoutDashboard,
+      },
+      { href: "/dashboard/profile", label: "My Profile", icon: User },
+    ];
+  };
+
+  const mobileNavLinks = [
     {
-      href: "/join-professionals",
-      label: "For Professionals",
-      icon: <Briefcase className="h-5 w-5" />,
+      href: "/professionals/join",
+      label: "Are you a professional?",
+      icon: <Scale className="h-5 w-5" />,
     },
     {
-      href: "/join-citizen",
-      label: "For Citizens",
-      icon: <Users className="h-5 w-5" />,
+      href: "/help",
+      label: "Help Center",
+      icon: <HelpCircle className="h-5 w-5" />,
     },
-    {
-      href: "/trust-security",
-      label: "Trust & Security",
-      icon: <ShieldCheck className="h-5 w-5" />,
-    },
-    {
-      href: "/partners",
-      label: "Partners",
-      icon: <Handshake className="h-5 w-5" />,
-    },
-    {
-      href: "/contact",
-      label: "Contacts",
-      icon: <Phone className="h-5 w-5" />,
-    },
+    { href: "/contact", label: "Contact", icon: <Phone className="h-5 w-5" /> },
   ];
 
   const closeMenu = () => setIsMenuOpen(false);
@@ -148,53 +171,103 @@ export function Header() {
             </Link>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-6">
-            {navLinks.map((link) => (
-              <Link
-                key={link.label}
-                href={link.href}
-                className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </nav>
-
           <div className="flex items-center gap-2">
-            {/* Language Dropdown */}
-            <div className="relative" ref={langDropdownRef}>
-              {/* Desktop Button */}
+            <div className="hidden md:flex items-center space-x-3">
               <Button
                 variant="outline"
-                className="hidden md:flex items-center gap-2 px-3 py-2 h-10 rounded-full"
-                onClick={() => setIsLangOpen(!isLangOpen)}
-                aria-label="Select language"
+                asChild
+                className="bg-transparent border-primary/60 text-foreground hover:bg-secondary hover:text-white hover:border-secondary transition-all duration-200"
               >
-                {selectedLanguage.flag}
-                <span className="text-sm font-medium">
-                  {selectedLanguage.name}
-                </span>
-                <ChevronDown
-                  className={`h-4 w-4 text-muted-foreground transition-transform duration-200 ${
-                    isLangOpen ? "rotate-180" : ""
-                  }`}
-                />
+                <Link
+                  href="/professionals/join"
+                  className="flex items-center gap-2"
+                >
+                  <Scale className="h-4 w-4" />
+                  Are you a professional?
+                </Link>
               </Button>
 
-              {/* Mobile Button */}
+              <Button
+                variant="outline"
+                asChild
+                className="bg-transparent border-primary/60 text-foreground hover:bg-primary hover:text-white hover:border-primary transition-all duration-200"
+              >
+                <Link href="/help" className="flex items-center gap-2">
+                  <HelpCircle className="h-4 w-4" />
+                  Help Center
+                </Link>
+              </Button>
+
+              {mounted && isAuthenticated ? (
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="outline"
+                      className="flex items-center gap-2 py-2 px-3 bg-primary text-white border-primary hover:bg-primary/90 hover:border-primary/90"
+                    >
+                      <User className="h-4 w-4" />
+                      <span className="hidden sm:inline">
+                        {user?.firstName || "My Account"}
+                      </span>
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end" className="w-56">
+                    {getUserMenuItems().map((item) => {
+                      const Icon = item.icon;
+                      return (
+                        <DropdownMenuItem key={item.href} asChild>
+                          <Link
+                            href={item.href}
+                            className="flex items-center gap-2"
+                          >
+                            <Icon className="h-4 w-4" />
+                            {item.label}
+                          </Link>
+                        </DropdownMenuItem>
+                      );
+                    })}
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem
+                      onClick={handleLogout}
+                      className="flex items-center gap-2 text-destructive focus:text-destructive focus:bg-destructive/10"
+                    >
+                      <LogOut className="h-4 w-4" />
+                      Logout
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                mounted && (
+                  <Button
+                    variant="outline"
+                    asChild
+                    className="flex flex-col items-center gap-1 h-auto py-2 px-3 bg-secondary text-white border-secondary hover:bg-secondary/80 hover:text-white hover:border-secondary/80 transition-all duration-200 shadow-md hover:shadow-lg"
+                  >
+                    <Link href={isAuthPage ? "/" : "/auth/login"}>
+                      <span className="text-sm font-medium">
+                        {isAuthPage ? "Home" : "Login"}
+                      </span>
+                      <span className="text-xs opacity-90">
+                        {isAuthPage ? "Go back" : "Manage my appointments"}
+                      </span>
+                    </Link>
+                  </Button>
+                )
+              )}
+            </div>
+
+            {/* Language Dropdown */}
+            <div className="relative" ref={langDropdownRef}>
               <Button
                 variant="ghost"
                 size="icon"
-                className="md:hidden"
                 onClick={() => setIsLangOpen(!isLangOpen)}
                 aria-label="Select language"
               >
                 <Globe className="h-5 w-5" />
               </Button>
-
-              {/* Dropdown Panel */}
               <div
-                className={`absolute right-0 mt-2 w-48 origin-top-right rounded-xl bg-background shadow-lg ring-1 ring-amber-200 ring-opacity-5 focus:outline-none transition-all duration-200 ease-out transform ${
+                className={`absolute right-0 mt-2 w-48 origin-top-right rounded-xl bg-background shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none transition-all duration-200 ease-out transform ${
                   isLangOpen
                     ? "opacity-100 scale-100"
                     : "opacity-0 scale-95 pointer-events-none"
@@ -246,7 +319,7 @@ export function Header() {
           }`}
           onClick={closeMenu}
         />
-        <div className="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-background p-4 shadow-lg">
+        <div className="fixed top-0 right-0 h-full w-4/5 max-w-sm bg-background p-4 shadow-lg flex flex-col">
           <div className="flex items-center justify-between pb-4 border-b">
             <div className="flex items-center space-x-2">
               <Scale className="h-7 w-7 text-primary" />
@@ -257,8 +330,25 @@ export function Header() {
               <span className="sr-only">Close menu</span>
             </Button>
           </div>
-          <nav className="mt-6 flex flex-col space-y-1">
-            {navLinks.map((link) => (
+          <nav className="mt-6 flex flex-col space-y-1 flex-grow">
+            {isAuthenticated
+              ? getUserMenuItems().map((link) => {
+                  const Icon = link.icon;
+                  return (
+                    <Link
+                      key={link.label}
+                      href={link.href}
+                      onClick={closeMenu}
+                      className="flex items-center gap-4 p-3 rounded-md text-lg text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors"
+                    >
+                      <Icon className="h-5 w-5" />
+                      <span>{link.label}</span>
+                    </Link>
+                  );
+                })
+              : null}
+
+            {mobileNavLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
@@ -270,6 +360,29 @@ export function Header() {
               </Link>
             ))}
           </nav>
+          <div className="mt-auto pt-4 border-t">
+            {isAuthenticated ? (
+              <Button
+                onClick={() => {
+                  handleLogout();
+                  closeMenu();
+                }}
+                className="w-full flex items-center gap-3 justify-center bg-destructive text-destructive-foreground"
+              >
+                <LogOut className="h-5 w-5" />
+                <span>Logout</span>
+              </Button>
+            ) : (
+              <Button
+                asChild
+                className="w-full bg-secondary text-secondary-foreground"
+              >
+                <Link href="/auth/login" onClick={closeMenu}>
+                  Login / Sign Up
+                </Link>
+              </Button>
+            )}
+          </div>
         </div>
       </div>
     </>

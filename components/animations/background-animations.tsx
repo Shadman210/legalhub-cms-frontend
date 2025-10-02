@@ -2,7 +2,7 @@
 
 export function BackgroundAnimations() {
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none">
+    <div className="fixed inset-0 -z-10 overflow-hidden pointer-events-none">
       {/* --- SVG Animations --- */}
 
       {/* Judge Gavel SVG Animation */}
@@ -144,29 +144,6 @@ export function BackgroundAnimations() {
         </svg>
       </div>
 
-      {/* Courthouse SVG Animation */}
-      <div
-        className="absolute top-1/3 right-1/3 w-16 h-16 animate-courthouse"
-        style={{ animationDelay: "4s" }}
-      >
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          className="w-full h-full text-primary/30"
-        >
-          <path
-            d="M3 21h18M4 21V9l8-6 8 6v12M8 21V15h8v6M12 3v6M6 9h12"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path d="M9 12h6v3H9z" fill="currentColor" opacity="0.4" />
-          <circle cx="10" cy="13" r="0.5" fill="currentColor" />
-          <circle cx="14" cy="13" r="0.5" fill="currentColor" />
-        </svg>
-      </div>
-
       {/* Legal Book SVG Animation */}
       <div
         className="absolute bottom-20 left-1/3 w-12 h-8 animate-legal-book"
@@ -198,54 +175,6 @@ export function BackgroundAnimations() {
             stroke="currentColor"
             strokeWidth="1.5"
             strokeLinecap="round"
-          />
-        </svg>
-      </div>
-
-      {/* Additional Legal Symbols */}
-      <div
-        className="absolute top-80 right-40 w-10 h-10 animate-legal-pulse"
-        style={{ animationDelay: "6s" }}
-      >
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          className="w-full h-full text-primary/35"
-        >
-          <circle
-            cx="12"
-            cy="12"
-            r="10"
-            stroke="currentColor"
-            strokeWidth="2"
-            fill="none"
-          />
-          <path
-            d="M8 12h8M12 8v8"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-        </svg>
-      </div>
-
-      <div
-        className="absolute bottom-60 right-20 w-8 h-8 animate-tech-glow"
-        style={{ animationDelay: "7s" }}
-      >
-        <svg
-          viewBox="0 0 24 24"
-          fill="none"
-          className="w-full h-full text-secondary/35"
-        >
-          <polygon
-            points="12,2 15.09,8.26 22,9 17,14.74 18.18,21.02 12,17.77 5.82,21.02 7,14.74 2,9 8.91,8.26"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            fill="currentColor"
-            opacity="0.3"
           />
         </svg>
       </div>
@@ -324,6 +253,28 @@ export function BackgroundAnimations() {
       <div
         className="absolute bottom-1/4 right-1/4 w-10 h-10 border border-secondary/20 rounded-full animate-tech-glow"
         style={{ animationDelay: "4s" }}
+      ></div>
+
+      {/* --- Matrix and Circuit Animations --- */}
+      <div
+        className="absolute top-1/4 left-0 w-24 h-0.5 bg-primary/30 animate-circuit"
+        style={{ animationDelay: "8s" }}
+      ></div>
+      <div
+        className="absolute font-mono text-lg text-secondary/40 animate-matrix"
+        style={{ top: "-10vh", left: "30%", animationDelay: "9s" }}
+      >
+        §
+      </div>
+      <div
+        className="absolute font-mono text-md text-primary/40 animate-matrix"
+        style={{ top: "-10vh", left: "60%", animationDelay: "9.5s" }}
+      >
+        §
+      </div>
+      <div
+        className="absolute top-3/4 right-0 w-20 h-0.5 bg-secondary/30 animate-circuit"
+        style={{ animationDelay: "10s", animationDirection: "reverse" }}
       ></div>
     </div>
   );

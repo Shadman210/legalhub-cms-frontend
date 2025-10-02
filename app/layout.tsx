@@ -1,4 +1,6 @@
 import { BackgroundAnimations } from "@/components/animations/background-animations";
+import { Header } from "@/components/header";
+import { FloatingMenu } from "@/components/navigation/floating-menu";
 import { Analytics } from "@vercel/analytics/next";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
@@ -23,6 +25,8 @@ export default function RootLayout({
     <html lang="en">
       <BackgroundAnimations />
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
+        <Header />
+        <FloatingMenu />
         <Suspense fallback={null}>{children}</Suspense>
         <Analytics />
       </body>

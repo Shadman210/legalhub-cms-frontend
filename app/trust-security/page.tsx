@@ -13,8 +13,6 @@ import {
 export default function SecurityPage() {
   return (
     <main className="min-h-screen bg-gray-50">
-      <Header />
-
       {/* Hero Section */}
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 py-16 text-center">

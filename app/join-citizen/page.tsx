@@ -15,7 +15,6 @@ import {
 export default function CitizenPage() {
   return (
     <main className="min-h-screen bg-gray-50 text-gray-800">
-      <Header />
       <div className="container mx-auto px-4 py-16">
         {/* Hero Section */}
         <div className="text-center mb-12">

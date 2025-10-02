@@ -47,7 +47,6 @@ export default function FindLawyersPage() {
 
   return (
     <main className="min-h-screen bg-background">
-      <Header />
       <div className="container mx-auto px-4 py-16">
         <div className="text-center mb-12">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">

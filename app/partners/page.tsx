@@ -6,8 +6,6 @@ import { ArrowRight, Gift, Handshake, Users } from "lucide-react";
 export default function PartnersPage() {
   return (
     <main className="min-h-screen bg-gray-50">
-      <Header />
-
       {/* Hero Section */}
       <div className="bg-white border-b">
         <div className="container mx-auto px-4 py-20 text-center">
