@@ -125,7 +125,11 @@ export function Header() {
       label: "Partners",
       icon: <Handshake className="h-5 w-5" />,
     },
-    { href: "/contact", label: "Contact", icon: <Phone className="h-5 w-5" /> },
+    {
+      href: "/contact",
+      label: "Contacts",
+      icon: <Phone className="h-5 w-5" />,
+    },
   ];
 
   const closeMenu = () => setIsMenuOpen(false);
