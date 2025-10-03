@@ -133,11 +133,11 @@ export function Header() {
     // This can be dynamic based on user role
     return [
       {
-        href: "/dashboard",
+        href: "//under-Construction",
         label: "Dashboard",
         icon: LayoutDashboard,
       },
-      { href: "/dashboard/profile", label: "My Profile", icon: User },
+      { href: "/under-Construction", label: "My Profile", icon: User },
     ];
   };
 
@@ -148,11 +148,15 @@ export function Header() {
       icon: <Scale className="h-5 w-5" />,
     },
     {
-      href: "/help",
+      href: "/under-Construction",
       label: "Help Center",
       icon: <HelpCircle className="h-5 w-5" />,
     },
-    { href: "/contact", label: "Contact", icon: <Phone className="h-5 w-5" /> },
+    {
+      href: "/under-Construction",
+      label: "Contact",
+      icon: <Phone className="h-5 w-5" />,
+    },
   ];
 
   const closeMenu = () => setIsMenuOpen(false);

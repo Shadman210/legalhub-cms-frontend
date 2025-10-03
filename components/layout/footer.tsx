@@ -52,7 +52,7 @@ export function Footer() {
             <ul className="space-y-2 text-muted-foreground">
               <li>
                 <Link
-                  href="/services/consultation"
+                  href="/under-Construction"
                   className="hover:text-primary transition-colors"
                 >
                   Consultations
@@ -60,7 +60,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/documents"
+                  href="/under-Construction"
                   className="hover:text-primary transition-colors"
                 >
                   Document Drafting
@@ -68,7 +68,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/reports"
+                  href="/under-Construction"
                   className="hover:text-primary transition-colors"
                 >
                   Reports
@@ -76,7 +76,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/services/notifications"
+                  href="/under-Construction"
                   className="hover:text-primary transition-colors"
                 >
                   Notifications
@@ -91,7 +91,7 @@ export function Footer() {
             <ul className="space-y-2 text-muted-foreground">
               <li>
                 <Link
-                  href="/professionals"
+                  href="/under-Construction"
                   className="hover:text-primary transition-colors"
                 >
                   Find a Lawyer
@@ -99,7 +99,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/professionals?type=bailiff"
+                  href="/under-Construction"
                   className="hover:text-primary transition-colors"
                 >
                   Find a Bailiff
@@ -107,7 +107,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/professionals/register"
+                  href="/under-Construction"
                   className="hover:text-primary transition-colors"
                 >
                   Join the Platform
@@ -153,7 +153,7 @@ export function Footer() {
             <ul className="space-y-2 text-muted-foreground">
               <li>
                 <Link
-                  href="/help"
+                  href="/under-Construction"
                   className="hover:text-primary transition-colors"
                 >
                   Help Center
@@ -161,7 +161,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/contact"
+                  href="/under-Construction"
                   className="hover:text-primary transition-colors"
                 >
                   Contact Us
@@ -169,7 +169,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/legal/terms"
+                  href="/under-Construction"
                   className="hover:text-primary transition-colors"
                 >
                   Terms of Use
@@ -177,7 +177,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/legal/privacy"
+                  href="/under-Construction"
                   className="hover:text-primary transition-colors"
                 >
                   Privacy Policy

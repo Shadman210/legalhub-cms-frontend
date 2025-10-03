@@ -75,10 +75,8 @@ export function SearchBar({ onSearch }: SearchBarProps) {
   }, [searchQuery]);
 
   const handleSearch = () => {
-    if (onSearch) {
-      onSearch(searchQuery, selectedLocation);
-    }
-    setShowSuggestions(false);
+    // Redirect to the under-construction page
+    window.location.href = "/under-Construction";
   };
 
   const handleSuggestionClick = (suggestion: string) => {
