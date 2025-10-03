@@ -20,25 +20,25 @@ export function Footer() {
             </p>
             <div className="flex space-x-4">
               <Link
-                href="/under-Construction"
+                href="#"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
-                href="/under-Construction"
+                href="#"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Twitter className="h-5 w-5" />
               </Link>
               <Link
-                href="/under-Construction"
+                href="#"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Instagram className="h-5 w-5" />
               </Link>
               <Link
-                href="/under-Construction"
+                href="#"
                 className="text-muted-foreground hover:text-primary transition-colors"
               >
                 <Linkedin className="h-5 w-5" />
@@ -122,7 +122,7 @@ export function Footer() {
             <ul className="space-y-2 text-muted-foreground">
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/blog"
                   className="hover:text-primary transition-colors"
                 >
                   Legal Articles
@@ -130,7 +130,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/blog/guides"
                   className="hover:text-primary transition-colors"
                 >
                   Practical Guides
@@ -138,7 +138,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/blog/news"
                   className="hover:text-primary transition-colors"
                 >
                   Legal News
