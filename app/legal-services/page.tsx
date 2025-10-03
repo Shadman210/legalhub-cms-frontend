@@ -1,5 +1,5 @@
-import { Header } from "@/components/header";
-import { Footer } from "@/components/footer";
+import { Footer } from "@/components/layout/footer";
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -8,14 +8,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
-  Scale,
-  Users,
-  FileText,
-  Shield,
-  Clock,
   CheckCircle,
+  Clock,
+  FileText,
+  Scale,
+  Shield,
+  Users,
 } from "lucide-react";
 
 export default function LegalServicesPage() {

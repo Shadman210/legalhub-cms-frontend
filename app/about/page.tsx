@@ -1,5 +1,5 @@
-import { Footer } from "@/components/footer";
-import { Header } from "@/components/header";
+import { Footer } from "@/components/layout/footer";
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Award, Globe, Shield, Users } from "lucide-react";
 
