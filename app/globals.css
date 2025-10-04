@@ -134,6 +134,36 @@
     background-clip: text;
   }
 
+  .glass-card {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(215, 148, 44, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark .glass-card {
+    background: rgba(26, 26, 26, 0.75);
+    border: 1px solid rgba(215, 148, 44, 0.3);
+  }
+
+  .glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(215, 148, 44, 0.2);
+    border-color: rgba(215, 148, 44, 0.5);
+  }
+
+  .glass-button {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(215, 148, 44, 0.2);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-button:hover {
+    background: rgba(215, 148, 44, 0.1);
+    border-color: rgba(215, 148, 44, 0.4);
+  }
+
   .startup-card {
     backdrop-filter: blur(10px);
     background: rgba(255, 255, 255, 0.1);
@@ -181,6 +211,10 @@
     animation: rotate-in 0.8s ease-out forwards;
   }
 
+  .animate-confetti-fall {
+    animation: confetti-fall 3s ease-in forwards;
+  }
+
   /* Added modern high-tech legal animations */
   .animate-circuit {
     animation: circuit 8s linear infinite;
@@ -225,6 +259,18 @@
 
   .animate-legal-book {
     animation: legal-book 7s ease-in-out infinite;
+  }
+
+  .animate-confetti-wobble {
+    animation: confetti-wobble 3s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 1.5s infinite;
+  }
+
+  .animate-confetti-rotate {
+    animation: confetti-rotate 3s linear infinite;
   }
 }
 
@@ -309,7 +355,39 @@
   }
 }
 
-/* Added modern high-tech legal animation keyframes */
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(100vh) rotate(720deg);
+  }
+}
+
+@keyframes confetti-wobble {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-20px);
+  }
+  75% {
+    transform: translateX(20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
 @keyframes circuit {
   0% {
     transform: translateX(-100px) rotate(0deg);
@@ -370,7 +448,6 @@
   }
 }
 
-/* Added legal-themed animation keyframes for judge gavel, lawyer hat, and other legal elements */
 @keyframes gavel-swing {
   0%,
   100% {
@@ -467,5 +544,14 @@
   50% {
     transform: rotateY(180deg) scale(1.1);
     opacity: 0.8;
+  }
+}
+
+@keyframes confetti-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

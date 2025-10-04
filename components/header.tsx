@@ -167,10 +167,7 @@ export function Header() {
         <div className="container mx-auto flex h-16 items-center justify-between px-4">
           <div className="flex items-center space-x-2">
             <Scale className="h-8 w-8 text-primary" />
-            <Link
-              href="/"
-              className="text-2xl font-bold text-primary hover:text-secondary transition-colors"
-            >
+            <Link href="/" className="font-bold text-foreground text-xl">
               LegalHub
             </Link>
           </div>
