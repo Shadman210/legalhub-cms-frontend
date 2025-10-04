@@ -75,8 +75,8 @@ export function SearchBar({ onSearch }: SearchBarProps) {
   }, [searchQuery]);
 
   const handleSearch = () => {
-    // Redirect to the under-construction page
-    window.location.href = "/under-Construction";
+    // Redirect to the waitlist page
+    window.location.href = "/waitlist";
   };
 
   const handleSuggestionClick = (suggestion: string) => {

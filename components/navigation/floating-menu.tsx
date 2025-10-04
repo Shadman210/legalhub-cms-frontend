@@ -22,19 +22,19 @@ const menuItems = [
     id: "home",
   },
   {
-    href: "/under-Construction",
+    href: "/waitlist",
     icon: Calendar,
     label: "Appointments",
     id: "appointments",
   },
   {
-    href: "/under-Construction",
+    href: "/waitlist",
     icon: FileText,
     label: "Documents",
     id: "documents",
   },
   {
-    href: "/under-Construction",
+    href: "/waitlist",
     icon: MessageCircle,
     label: "Messages",
     id: "messages",
@@ -81,9 +81,9 @@ export function FloatingMenu() {
 
   const handleProfileClick = () => {
     if (user?.userType === "lawyer" || user?.userType === "bailiff") {
-      router.push("/under-Construction");
+      router.push("/waitlist");
     } else {
-      router.push("/under-Construction");
+      router.push("/waitlist");
     }
   };
 
@@ -108,7 +108,7 @@ export function FloatingMenu() {
                 return (
                   <button
                     key={item.id}
-                    onClick={() => router.push("/under-Construction")}
+                    onClick={() => router.push("/waitlist")}
                     className="flex flex-col items-center gap-1 p-2 rounded-xl transition-colors text-muted-foreground hover:bg-muted hover:text-foreground"
                   >
                     <Icon className="h-4 w-4 flex-shrink-0" />
@@ -146,7 +146,7 @@ export function FloatingMenu() {
               </button>
             ) : (
               <Link
-                href="/under-Construction"
+                href="/waitlist"
                 className="flex flex-col items-center gap-1 p-2 rounded-xl transition-colors text-muted-foreground hover:bg-muted hover:text-foreground"
               >
                 <LogIn className="h-4 w-4 flex-shrink-0" />
@@ -197,7 +197,7 @@ export function FloatingMenu() {
                 return (
                   <button
                     key={item.id}
-                    onClick={() => router.push("/under-Construction")}
+                    onClick={() => router.push("/waitlist")}
                     className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 group/item text-muted-foreground hover:bg-muted hover:text-foreground w-full"
                     title={`${item.label} (Login required)`}
                   >
@@ -282,7 +282,7 @@ export function FloatingMenu() {
               </>
             ) : (
               <Link
-                href="/under-Construction"
+                href="/waitlist"
                 className="flex items-center gap-3 p-3 rounded-xl transition-all duration-300 group/item text-muted-foreground hover:bg-muted hover:text-foreground w-full"
                 title="Login"
               >

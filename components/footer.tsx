@@ -38,7 +38,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/waitlist"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors scalable-text"
                 >
                   Find Lawyers
@@ -46,7 +46,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/waitlist"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors scalable-text"
                 >
                   Legal Services
@@ -54,7 +54,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/waitlist"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors scalable-text"
                 >
                   How It Works
@@ -62,7 +62,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/waitlist"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors scalable-text"
                 >
                   Pricing
@@ -70,7 +70,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/waitlist"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors scalable-text"
                 >
                   Client Portal
@@ -84,7 +84,7 @@ export function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/waitlist"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors scalable-text"
                 >
                   Join LegalHub
@@ -92,7 +92,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/waitlist"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors scalable-text"
                 >
                   Professional Portal
@@ -100,7 +100,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/waitlist"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors scalable-text"
                 >
                   Practice Management
@@ -108,7 +108,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/waitlist"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors scalable-text"
                 >
                   Resources
@@ -116,7 +116,7 @@ export function Footer() {
               </li>
               <li>
                 <Link
-                  href="/under-Construction"
+                  href="/waitlist"
                   className="text-primary-foreground/80 hover:text-primary-foreground transition-colors scalable-text"
                 >
                   Support
@@ -161,20 +161,20 @@ export function Footer() {
                 GDPR Policy
               </Link>
               <Link
-                href="/under-Construction"
+                href="/waitlist"
                 className="text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors scalable-text"
               >
                 Cookie Policy
               </Link>
 
               <Link
-                href="/under-Construction"
+                href="/waitlist"
                 className="text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors scalable-text"
               >
                 Mobile App
               </Link>
               <Link
-                href="/under-Construction"
+                href="/waitlist"
                 className="text-primary-foreground/80 hover:text-primary-foreground text-sm transition-colors scalable-text"
               >
                 Newsletter

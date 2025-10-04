@@ -133,11 +133,11 @@ export function Header() {
     // This can be dynamic based on user role
     return [
       {
-        href: "//under-Construction",
+        href: "//waitlist",
         label: "Dashboard",
         icon: LayoutDashboard,
       },
-      { href: "/under-Construction", label: "My Profile", icon: User },
+      { href: "/waitlist", label: "My Profile", icon: User },
     ];
   };
 
@@ -148,12 +148,12 @@ export function Header() {
       icon: <Scale className="h-5 w-5" />,
     },
     {
-      href: "/under-Construction",
+      href: "/waitlist",
       label: "Help Center",
       icon: <HelpCircle className="h-5 w-5" />,
     },
     {
-      href: "/under-Construction",
+      href: "/waitlist",
       label: "Contact",
       icon: <Phone className="h-5 w-5" />,
     },
@@ -247,7 +247,7 @@ export function Header() {
                     asChild
                     className="flex flex-col items-center gap-1 h-auto py-2 px-3 bg-secondary text-white border-secondary hover:bg-secondary/80 hover:text-white hover:border-secondary/80 transition-all duration-200 shadow-md hover:shadow-lg"
                   >
-                    <Link href={isAuthPage ? "/" : "/auth/login"}>
+                    <Link href={isAuthPage ? "/" : "/waitlist"}>
                       <span className="text-sm font-medium">
                         {isAuthPage ? "Home" : "Login"}
                       </span>
@@ -381,7 +381,7 @@ export function Header() {
                 asChild
                 className="w-full bg-secondary text-secondary-foreground"
               >
-                <Link href="/auth/login" onClick={closeMenu}>
+                <Link href="/waitlist" onClick={closeMenu}>
                   Login / Sign Up
                 </Link>
               </Button>

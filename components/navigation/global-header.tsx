@@ -136,7 +136,7 @@ export function GlobalHeader({
                 <>
                   <div className="border-t my-4 visibility: hidden;" />
                   <Link
-                    href="/auth/login"
+                    href="/waitlist"
                     className="flex items-center gap-3 px-3 py-3 rounded-lg text-muted-foreground hover:text-foreground hover:bg-accent transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
@@ -144,7 +144,7 @@ export function GlobalHeader({
                     Connexion
                   </Link>
                   <Link
-                    href="/auth/register"
+                    href="/waitlist"
                     className="flex items-center gap-3 px-3 py-3 rounded-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

@@ -26,7 +26,7 @@ export function CTASection() {
                 className="bg-white text-primary hover:bg-gray-100 border-white animate-bounce-in font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
                 asChild
               >
-                <Link href="/auth/register">
+                <Link href="/waitlist">
                   <Sparkles className="w-5 h-5 mr-2" />
                   Create an account
                 </Link>

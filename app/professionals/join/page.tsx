@@ -511,7 +511,7 @@ export default function ProfessionalJoinPage() {
               <ul className="space-y-2 text-muted-foreground">
                 <li>
                   <Link
-                    href="/under-Construction"
+                    href="/waitlist"
                     className="hover:text-primary transition-colors"
                   >
                     Consultations
@@ -519,7 +519,7 @@ export default function ProfessionalJoinPage() {
                 </li>
                 <li>
                   <Link
-                    href="/under-Construction"
+                    href="/waitlist"
                     className="hover:text-primary transition-colors"
                   >
                     Rédaction de documents
@@ -527,7 +527,7 @@ export default function ProfessionalJoinPage() {
                 </li>
                 <li>
                   <Link
-                    href="/under-Construction"
+                    href="/waitlist"
                     className="hover:text-primary transition-colors"
                   >
                     Constats
@@ -535,7 +535,7 @@ export default function ProfessionalJoinPage() {
                 </li>
                 <li>
                   <Link
-                    href="/under-Construction"
+                    href="/waitlist"
                     className="hover:text-primary transition-colors"
                   >
                     Notifications
@@ -551,7 +551,7 @@ export default function ProfessionalJoinPage() {
               <ul className="space-y-2 text-muted-foreground">
                 <li>
                   <Link
-                    href="/under-Construction"
+                    href="/waitlist"
                     className="hover:text-primary transition-colors"
                   >
                     Trouver un avocat
@@ -559,7 +559,7 @@ export default function ProfessionalJoinPage() {
                 </li>
                 <li>
                   <Link
-                    href="/under-Construction"
+                    href="/waitlist"
                     className="hover:text-primary transition-colors"
                   >
                     Trouver un huissier
@@ -567,7 +567,7 @@ export default function ProfessionalJoinPage() {
                 </li>
                 <li>
                   <Link
-                    href="/under-Construction"
+                    href="/waitlist"
                     className="hover:text-primary transition-colors"
                   >
                     Rejoindre la plateforme
@@ -611,7 +611,7 @@ export default function ProfessionalJoinPage() {
               <ul className="space-y-2 text-muted-foreground">
                 <li>
                   <Link
-                    href="/under-Construction"
+                    href="/waitlist"
                     className="hover:text-primary transition-colors"
                   >
                     Centre d'aide
@@ -619,7 +619,7 @@ export default function ProfessionalJoinPage() {
                 </li>
                 <li>
                   <Link
-                    href="/under-Construction"
+                    href="/waitlist"
                     className="hover:text-primary transition-colors"
                   >
                     Nous contacter
@@ -627,7 +627,7 @@ export default function ProfessionalJoinPage() {
                 </li>
                 <li>
                   <Link
-                    href="/under-Construction"
+                    href="/waitlist"
                     className="hover:text-primary transition-colors"
                   >
                     Conditions d'utilisation
@@ -635,7 +635,7 @@ export default function ProfessionalJoinPage() {
                 </li>
                 <li>
                   <Link
-                    href="/under-Construction"
+                    href="/waitlist"
                     className="hover:text-primary transition-colors"
                   >
                     Politique de confidentialité
